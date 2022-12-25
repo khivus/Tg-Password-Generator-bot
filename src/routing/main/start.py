@@ -14,7 +14,7 @@ async def process_start(message: types.Message) -> None:
     await message.answer(
         text=
         f'Hello! I\'m bot that generates passwords for you.\n'
-        f'This bot <b>does not</b> save your passwords!'
+        f'This bot <b>does not</b> save your passwords! '
         f'You can get readable and unreadable passwords by using /gen command. Also you can set up settings for '
         f'your preferences by using /settings command.\n'
         f'Contact @khivus for suggestions and questions.\n'
