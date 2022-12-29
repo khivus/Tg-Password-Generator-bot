@@ -11,3 +11,4 @@ class SettingType(enum.Enum):
     COMPLEXITY = 'complexity'
     SEPARATOR = 'separator'
     USE_NUMBER = 'use_number'
+    RESET = 'reset'

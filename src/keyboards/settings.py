@@ -10,5 +10,8 @@ def build_settings_keyboard():
     builder.button(text='Complexity', callback_data=SettingsCallbackData(type=SettingType.COMPLEXITY))
     builder.button(text='Separator', callback_data=SettingsCallbackData(type=SettingType.SEPARATOR))
     builder.button(text='Use number', callback_data=SettingsCallbackData(type=SettingType.USE_NUMBER))
+    builder.button(text='Reset all', callback_data=SettingsCallbackData(type=SettingType.RESET))
+
+    builder.adjust(3, 1)
 
     return builder.as_markup()

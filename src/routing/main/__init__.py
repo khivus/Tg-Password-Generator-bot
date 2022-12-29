@@ -4,7 +4,6 @@ from . import (
     start,
     empty,
     cancel,
-    defaults,
     settings,
     settings_action
 )
