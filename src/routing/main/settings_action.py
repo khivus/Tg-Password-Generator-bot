@@ -38,7 +38,7 @@ async def process_gen_callback(query: types.CallbackQuery, callback_data: Settin
         reply_markup = build_settings_keyboard()
         msg = get_text(additional_text=f'Use number changed to {settings.use_number}.\n', settings=settings)
     elif callback_data.type == SettingType.RESET:
-        if (settings.complexity == 4) and (settings.separator == None) and (settings.use_number == True):
+        if (settings.complexity == 4) and (settings.separator is None) and settings.use_number:
             return
 
         settings.complexity = 4
