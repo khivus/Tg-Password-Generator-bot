@@ -1,14 +1,13 @@
 from aiogram import types
 from aiogram.filters import Command
 
-from src.models import User, Settings, Statistics
+from src.models import User, Settings
 from src.routers import main_router
 
 
 @main_router.message(Command("start"))
 async def process_start(message: types.Message) -> None:
-    await Statistics.get_or_create(user_id=message.from_user.id, defaults={})
-    user, _ = await User.get_or_create(telegram_id=message.from_user.id)
+    user, _ = await User.get_or_create(telegram_id=message.from_user.id, defaults={})
     await Settings.get_or_create(user=user, defaults={})
 
     await message.answer(

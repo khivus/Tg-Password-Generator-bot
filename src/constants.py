@@ -6,7 +6,7 @@ config = Config()
 bot = Bot(token=config.API_TOKEN, parse_mode='HTML')
 dp = Dispatcher()
 
-version = 'v1.43'
+version = 'v1.5'
 admin_id = 897276284
 
 TORTOISE_CONFIG = {

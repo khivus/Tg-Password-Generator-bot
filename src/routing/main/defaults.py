@@ -14,6 +14,7 @@ async def process_defaults(message: types.Message, state: FSMContext) -> None:
 
     settings = await Settings.get(user_id=message.from_user.id)
     settings.complexity = 4
+    settings.length = 16
     settings.separator = None
     settings.use_number = True
     await settings.save()

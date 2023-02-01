@@ -9,6 +9,7 @@ class GenerationType(enum.Enum):
 
 class SettingType(enum.Enum):
     COMPLEXITY = 'complexity'
+    LENGTH = 'length'
     SEPARATOR = 'separator'
     USE_NUMBER = 'use_number'
     RESET = 'reset'
