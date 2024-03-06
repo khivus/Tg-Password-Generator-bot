@@ -11,8 +11,10 @@ def build_settings_keyboard():
     builder.button(text='Length', callback_data=SettingsCallbackData(type=SettingType.LENGTH))
     builder.button(text='Separator', callback_data=SettingsCallbackData(type=SettingType.SEPARATOR))
     builder.button(text='Use number', callback_data=SettingsCallbackData(type=SettingType.USE_NUMBER))
+    builder.button(text='Use uppercase', callback_data=SettingsCallbackData(type=SettingType.USE_UPPER))
+    builder.button(text='Use lowercase', callback_data=SettingsCallbackData(type=SettingType.USE_LOWER))
     builder.button(text='Reset all', callback_data=SettingsCallbackData(type=SettingType.RESET))
 
-    builder.adjust(2, 2, 1)
+    builder.adjust(2, 2, 2, 1)
 
     return builder.as_markup()

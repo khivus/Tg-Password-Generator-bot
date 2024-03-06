@@ -16,15 +16,12 @@ async def process_gen_callback(query: types.CallbackQuery,
     settings = await Settings.get(user_id=query.from_user.id)
 
     if callback_data.type is GenerationType.HUMAN:
-        password = generate.generate_pass_human(complexity=settings.complexity, separator=settings.separator,
-                                                use_number=settings.use_number)
+        password = generate.generate_pass_human(complexity=settings.complexity, separator=settings.separator, use_number=settings.use_number)
     elif callback_data.type is GenerationType.NON_HUMAN:
-        password = generate.generate_pass_non_human(length=settings.length, use_number=settings.use_number)
-    elif callback_data.type is GenerationType.NUMBERS_ONLY:
-        password = generate.generate_pass_numbers_only(length=settings.length)
+        password = generate.generate_pass_non_human(length=settings.length, use_number=settings.use_number, separator=settings.separator, use_upper=settings.use_upper, use_lower=settings.use_lower)
     else:
         return
     
     user.generations += 1
     await user.save()
-    await query.message.edit_text(text=f'Generated password: <code>{password}</code>', reply_markup=keyboard)
+    await query.message.edit_text(text=f'<code>{password}</code>', reply_markup=keyboard)

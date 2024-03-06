@@ -13,6 +13,8 @@ def get_text(settings: Settings, additional_text: str = ''):
            f'<code>Length</code> = {settings.length}\n' \
            f'<code>Separator</code> = {settings.separator or "Default"}\n' \
            f'<code>Use number</code> = {settings.use_number}\n' \
+           f'<code>Use uppercase</code> = {settings.use_upper}\n' \
+           f'<code>Use lowercase</code> = {settings.use_lower}\n' \
            f'Choose setting to change.'
     return text
 

@@ -48,11 +48,23 @@ async def process_gen_callback(query: types.CallbackQuery, callback_data: Settin
         reply_markup = build_settings_keyboard()
         msg = get_text(additional_text=f'Use number changed to {settings.use_number}.\n', settings=settings)
 
+    elif callback_data.type == SettingType.USE_UPPER:
+        settings.use_upper = not settings.use_upper
+        reply_markup = build_settings_keyboard()
+        msg = get_text(additional_text=f'Use uppercase changed to {settings.use_upper}.\n', settings=settings)
+
+    elif callback_data.type == SettingType.USE_LOWER:
+        settings.use_lower = not settings.use_lower
+        reply_markup = build_settings_keyboard()
+        msg = get_text(additional_text=f'Use lowercase changed to {settings.use_lower}.\n', settings=settings)
+
     elif callback_data.type == SettingType.RESET:
         settings.complexity = 4
         settings.length = 16
         settings.separator = None
         settings.use_number = True
+        settings.use_upper = True
+        settings.use_lower = True
 
         reply_markup = build_settings_keyboard()
         msg = get_text(additional_text=f'All settings reset to defaults.\n', settings=settings)
